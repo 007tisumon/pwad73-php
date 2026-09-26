@@ -1,10 +1,11 @@
-<?php
-
-
-$name = "Sumon";
-$arr = ["arr","str","int"];
-
-echo "<pre>";
-var_dump($arr);
-
-echo $name;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <?php echo "hello world"; ?>
+</body>
+</html>
