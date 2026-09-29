@@ -13,19 +13,12 @@
     <?php include_once('config.php');
     $id = $_GET['id'];
 
-
-    $sql = "SELECT name, email , pass , phone , address FROM pwd WHERE id = '$id' LIMIT 1";
-    $student = $conn->query($sql);
-    $student = $student->fetch_assoc();
-    print_r($student['address']);
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $pass = $_POST['pass'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
-
 
 
         $sql = "UPDATE pwd 
@@ -35,13 +28,14 @@
         $conn->query($sql);
 
         if ($conn->affected_rows) {
-            header("Location: index.php");
+            // header("Location: index.php");
+            echo "<p>success</p>";
 
         }
-
-
     }
-
+    $sql = "SELECT * FROM pwd WHERE id = '$id' LIMIT 1";
+    $student = $conn->query($sql);
+    $student = $student->fetch_assoc();
 
     ?>
     <main class="entry-panel">
